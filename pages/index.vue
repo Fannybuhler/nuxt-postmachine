@@ -6,22 +6,18 @@
         nuxt-postmachine
       </h1>
       <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
+        <NuxtLink 
+          to="/about"
           class="button--green"
         >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
+          About
+        </NuxtLink>
+        <NuxtLink 
+          to="/news"
           class="button--grey"
         >
-          GitHub
-        </a>
+          News
+        </NuxtLink>
       </div>
     </div>
   </div>

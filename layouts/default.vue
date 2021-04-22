@@ -1,5 +1,11 @@
 <template>
   <div>
+    <nav>
+      <NuxtLink to="/">Start</NuxtLink>
+      <NuxtLink to="/about">About</NuxtLink>
+      <NuxtLink to="/news">News</NuxtLink>
+    </nav>
+
     <Nuxt />
   </div>
 </template>
