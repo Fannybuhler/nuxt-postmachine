@@ -1,14 +1,19 @@
 <template>
   <div>
-    <nav>
-      <NuxtLink to="/">Start</NuxtLink>
-      <NuxtLink to="/about">About</NuxtLink>
-      <NuxtLink to="/news">News</NuxtLink>
-    </nav>
-
+    <AppHeader />
     <Nuxt />
   </div>
 </template>
+
+<script>
+// import AppHeader from '~/components/AppHeader'
+
+export default {
+  // components: {
+  //   AppHeader
+  // }
+}
+</script>
 
 <style>
 html {
@@ -22,6 +27,7 @@ html {
     Arial,
     sans-serif;
   font-size: 16px;
+  line-height: 160%; 
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
