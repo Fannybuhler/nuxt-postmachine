@@ -4,7 +4,7 @@
       <h3 class="post-row__title">{{ post.title }}</h3>
       <div class="post-row__meta">
         <div class="post-row__meta-item">
-          <time>{{ post.date }}</time>
+          <time>{{ publishedAt }}</time>
         </div>
         <div class="post-row__meta-item">
           <p>{{ post.comments }} comments</p>
@@ -17,7 +17,15 @@
 </template>
 
 <script>
+import moment from 'moment'
+
 export default {
+  data() {
+    return {
+      publishedAt: moment(this.post.date).format('YYYY-MM-DD HH:mm')
+    }
+  },
+
   props: {
     post: {
       type: Object,

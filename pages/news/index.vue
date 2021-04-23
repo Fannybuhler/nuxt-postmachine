@@ -1,6 +1,6 @@
 
 <template>
-  <div>
+  <main class="news-body">
     <p v-if="$fetchState.pending">Fetching posts...</p>
     <p v-else-if="$fetchState.error">An error occurred :(</p>
     <h1 class="page-title">Nuxt posts</h1>
@@ -12,7 +12,7 @@
       </ul>
       <Pagination :pTotal="total" :pPage="page" />
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -49,7 +49,17 @@ export default {
 
 <style>
   .page-title {
-   margin: 2rem; 
+   margin: 2rem 0; 
+  }
+
+  .news-body {
+    max-width: 1200px;
+    margin: 0 2rem;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
   }
 
   li {
