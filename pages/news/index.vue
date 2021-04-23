@@ -1,22 +1,16 @@
 
 <template>
   <div>
-    <h1 class="page-title">Nuxt posts</h1>
     <p v-if="$fetchState.pending">Fetching posts...</p>
     <p v-else-if="$fetchState.error">An error occurred :(</p>
-    <div v-else>
+    <h1 class="page-title">Nuxt posts</h1>
+    <div>
       <ul>
         <li v-for="post of posts" :key="post.id">
-          <NuxtLink :to="`/news/${post.id}`">
-            {{ post.id }}. {{ post.title }}
-          </NuxtLink>
+          <PostRow :post="post" />
         </li>
       </ul>
-      <div class="button-wrapper">
-        <button :disabled="page === 1" class="pagination-button" @click="prevPage()">Prev page</button>
-        <p>{{ page }} / {{ total }}</p>
-        <button :disabled="page === total" class="pagination-button" @click="nextPage()">Next page</button>
-      </div>
+      <Pagination :pTotal="total" :pPage="page" />
     </div>
   </div>
 </template>
@@ -24,15 +18,16 @@
 <script>
 export default {
   data() {
-    const query = this.$route.query
     return {
       posts: [],
-      page: query.page ? parseInt(query.page) : 1,
+      page: null,
       total: null
     }
   },
 
   async fetch() {
+    const query = this.$route.query
+    this.page = query.page ? parseInt(query.page) : 1
     const take = 10
     const skip = (take * this.page) - take
     
@@ -48,17 +43,6 @@ export default {
 
   watch: {
     '$route.query': '$fetch'
-  },
-
-  methods: {
-    prevPage() {
-      this.page--
-      this.$router.push({ path: `/news?page=${this.page}` })
-    },
-    nextPage() {
-      this.page++
-      this.$router.push({ path: `/news?page=${this.page}` })
-    },
   }
 }
 </script>
@@ -67,13 +51,13 @@ export default {
   .page-title {
    margin: 2rem; 
   }
-  .button-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  li {
+    list-style: none;
   }
-  .pagination-button {
-    margin: 1rem 0.5rem;
-    padding: 5px;
+
+  a {
+    text-decoration: none;
+    color: #000;
   }
 </style>

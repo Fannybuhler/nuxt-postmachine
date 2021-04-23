@@ -1,25 +1,8 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        nuxt-postmachine
-      </h1>
-      <div class="links">
-        <NuxtLink 
-          to="/about"
-          class="button--green"
-        >
-          About
-        </NuxtLink>
-        <NuxtLink 
-          to="/news"
-          class="button--grey"
-        >
-          News
-        </NuxtLink>
-      </div>
-    </div>
+    <h1 class="title">
+      nuxt-postmachine
+    </h1>
   </div>
 </template>
 
@@ -50,7 +33,7 @@ export default {}
     sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 100px;
+  font-size: 80px;
   color: #35495e;
   letter-spacing: 1px;
 }
