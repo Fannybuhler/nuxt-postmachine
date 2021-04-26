@@ -1,10 +1,10 @@
 
 <template>
   <main class="news-body">
+    <h1 class="page-title">Nuxt posts</h1>
     <p v-if="$fetchState.pending">Fetching posts...</p>
     <p v-else-if="$fetchState.error">An error occurred :(</p>
-    <h1 class="page-title">Nuxt posts</h1>
-    <div>
+    <div v-else>
       <ul>
         <li v-for="post of posts" :key="post.id">
           <PostRow :post="post" />

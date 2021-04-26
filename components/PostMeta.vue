@@ -1,12 +1,12 @@
 <template>
   <div class="post-row__meta">
-        <div class="post-row__meta-item">
-          <time>{{ publishedAt }} ago</time>
-        </div>
-        <div class="post-row__meta-item">
-          {{ post.comments }} comments
-        </div>
-      </div>
+    <div class="post-row__meta-item">
+      <time>{{ publishedAt }} ago</time>
+    </div>
+    <div class="post-row__meta-item">
+      {{ post.comments }} comments
+    </div>
+  </div>
 </template>
 
 <script>
