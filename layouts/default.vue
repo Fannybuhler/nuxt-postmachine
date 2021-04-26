@@ -1,17 +1,15 @@
 <template>
   <div>
     <AppHeader />
-    <Nuxt />
+    <div id="pageWrap">
+      <Nuxt />
+    </div>
   </div>
 </template>
 
 <script>
-// import AppHeader from '~/components/AppHeader'
-
 export default {
-  // components: {
-  //   AppHeader
-  // }
+  
 }
 </script>
 
@@ -43,4 +41,10 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
+
+#pageWrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 </style>

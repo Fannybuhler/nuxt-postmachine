@@ -3,8 +3,14 @@
     <p v-if="$fetchState.pending">Fetching posts...</p>
     <p v-else-if="$fetchState.error">An error occurred :(</p>
     <div v-else>
-      <h1>ID: {{ this.$route.params.id }}</h1>
-      <h1>Title: {{ post.title }}</h1>
+      <header class="post-header">
+        <h1 class="post-header__heading">
+          <span>NEWS</span>
+          {{post.title}}
+        </h1>
+      </header>
+      <PostMeta :post="post"/>
+
       <p>Summary: {{post.summary}}</p> 
     </div>
   </div>
