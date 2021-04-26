@@ -9,6 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@types/dotenv": "^8.2.0",
     "core-js": "^3.9.1",
     "moment": "^2.29.1",
     "nuxt": "^2.15.3",
@@ -19,8 +20,6 @@
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "fibers": "^5.0.0",
-    "prettier": "^2.2.1",
-    "pug": "^3.0.2",
-    "pug-plain-loader": "^1.1.0"
+    "prettier": "^2.2.1"
   }
 }

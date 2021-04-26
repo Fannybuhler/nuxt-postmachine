@@ -5,7 +5,7 @@
     <div v-else>
       <header class="post-header">
         <h1 class="post-header__heading">
-          <span>news</span>
+          <span class="post-header__heading-prefix">news</span>
           {{post.title}}
         </h1>
         <PostMeta :post="post"/>
@@ -66,22 +66,21 @@ export default {
       line-height: 48px;
     }
 
-    &__heading span {
-      color: rgba(255,0,0, 1);
+    &__heading-prefix {
+      color: #f00;
       text-transform: uppercase;
       letter-spacing: -1px;
       font-weight: 900;
-    }
 
-    &__heading span::after {
-      display: inline-block;
-      padding-left: .5rem;
-      color: #d4d4d4;
-      content: "|";
-      font-weight: 400;
+      &::after {
+        display: inline-block;
+        padding-left: .5rem;
+        color: #d4d4d4;
+        content: "|";
+        font-weight: 400;
+      }
     }
   }
-  
 
   .post-media {
     margin-left: 0;
@@ -129,7 +128,6 @@ export default {
       font-weight: 700;
       margin-top: 1rem;
       text-decoration: underline;
-      -webkit-text-decoration-color: #217ac8;
       text-decoration-color: #217ac8;
     }
 

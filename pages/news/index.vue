@@ -31,8 +31,6 @@ export default {
     const take = 10
     const skip = (take * this.page) - take
     
-    console.log('page: ', this.page)
-    
     const response = await fetch(
       `http://postmachine-api-master.herokuapp.com/api/posts/en/crime?take=${take}&skip=${skip}`
     ).then((res) => res.json())
