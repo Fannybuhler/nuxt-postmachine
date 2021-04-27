@@ -1,7 +1,7 @@
 
 <template>
   <main class="news-body">
-    <h1 class="page-title">Nuxt posts</h1>
+    <h1 class="page-title">Crime News</h1>
     <p v-if="$fetchState.pending">Fetching posts...</p>
     <p v-else-if="$fetchState.error">An error occurred :(</p>
     <div v-else>
@@ -27,12 +27,13 @@ export default {
 
   async fetch() {
     const query = this.$route.query
+    const crimeEndpoint = 'http://postmachine-api-master.herokuapp.com/api/posts/en/crime'
     this.page = query.page ? parseInt(query.page) : 1
     const take = 10
     const skip = (take * this.page) - take
     
     const response = await fetch(
-      `http://postmachine-api-master.herokuapp.com/api/posts/en/crime?take=${take}&skip=${skip}`
+      `${crimeEndpoint}?take=${take}&skip=${skip}`
     ).then((res) => res.json())
 
     this.posts = response.posts
