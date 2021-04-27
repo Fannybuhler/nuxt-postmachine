@@ -10,7 +10,7 @@
           <PostRow :post="post" />
         </li>
       </ul>
-      <Pagination :pTotal="total" :pPage="page" />
+      <Pagination :pTotal="total" :pPage="page" parentSlug="/news"/>
     </div>
   </main>
 </template>

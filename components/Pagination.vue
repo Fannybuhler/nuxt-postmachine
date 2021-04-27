@@ -16,6 +16,10 @@ export default {
     pTotal: {
       type: Number,
       default: null
+    },
+    parentSlug: {
+      type: String,
+      default: '/'
     }
   },
 
@@ -30,12 +34,12 @@ export default {
     prevPage() {
       window.scroll(0, 0)
       this.page--
-      this.$router.push({ path: `/news?page=${this.page}` })
+      this.$router.push({ path: `${this.$props.parentSlug}?page=${this.page}` })
     },
     nextPage() {
       window.scroll(0, 0)
       this.page++
-      this.$router.push({ path: `/news?page=${this.page}` })
+      this.$router.push({ path: `${this.$props.parentSlug}?page=${this.page}` })
     }
   }  
 }
