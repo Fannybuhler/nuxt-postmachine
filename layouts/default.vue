@@ -9,11 +9,11 @@
 
 <script>
 export default {
-  
+
 }
 </script>
 
-<style>
+<style lang="scss">
 html {
   color: #000;
   font-family:
@@ -46,5 +46,4 @@ html {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 </style>
