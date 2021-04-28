@@ -24,7 +24,7 @@ export default {
   },
 
   async fetch() {
-    const endpoint = 'http://postmachine-api-master.herokuapp.com/api/promoted-posts/en'
+    const endpoint = 'https://postmachine-api-master.herokuapp.com/api/promoted-posts/en'
 
     const responseSpace = await fetch(`${endpoint}/space`)
     .then ((res) => res.json())

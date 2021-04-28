@@ -28,7 +28,7 @@ export default {
     const id = this.$route.params.id
 
     const response = await fetch(
-      `http://postmachine-api-master.herokuapp.com/api/post/en/${id}`
+      `https://postmachine-api-master.herokuapp.com/api/post/en/${id}`
     ).then((res) => res.json())
 
     this.post = await response.post

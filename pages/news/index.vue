@@ -27,7 +27,7 @@ export default {
   },
 
   async fetch() {
-    const endpoint = `http://postmachine-api-master.herokuapp.com/api/posts/en`
+    const endpoint = `https://postmachine-api-master.herokuapp.com/api/posts/en`
     const scope = this.$route.params.scope 
     const query = this.$route.query
     const page = query.page ? parseInt(query.page) : 1
