@@ -17,9 +17,6 @@ export function createRouter() {
         path: '/',
         name: 'start',
         component: Start,
-        meta: {
-          scope: 'space'
-        }
       },
       {
         path: '/news',

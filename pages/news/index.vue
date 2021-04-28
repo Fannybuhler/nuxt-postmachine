@@ -27,20 +27,27 @@ export default {
   },
 
   async fetch() {
-    const scope = this.$route.params.scope || this.$route.meta.scope 
+    const endpoint = `http://postmachine-api-master.herokuapp.com/api/posts/en`
+    const scope = this.$route.params.scope 
     const query = this.$route.query
-    const crimeEndpoint = `http://postmachine-api-master.herokuapp.com/api/posts/en/${scope}`
-    this.page = query.page ? parseInt(query.page) : 1
+    const page = query.page ? parseInt(query.page) : 1
     const take = 10
-    const skip = (take * this.page) - take
+    const skip = (take * page) - take
     
     const response = await fetch(
-      `${crimeEndpoint}?take=${take}&skip=${skip}`
+      `${endpoint}/${scope}?take=${take}&skip=${skip}`
     ).then((res) => res.json())
 
-    this.title = scope + ' news'
+    this.page = page
+    this.title = this.upperCaseFirst(`${scope} News`)
     this.posts = response.posts
     this.total = Math.ceil(response.maxTotal / take)
+  },
+
+  methods: {
+    upperCaseFirst(text) {
+      return text.charAt(0).toUpperCase() + text.slice(1);
+    }
   },
 
   watch: {
@@ -58,7 +65,6 @@ export default {
 <style>
   .page-title {
    margin: 2rem 0; 
-   text-transform: capitalize;
   }
 
   .news-body {
