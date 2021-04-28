@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar">
-    <NuxtLink to="/">Start</NuxtLink>
-    <NuxtLink to="/about">About</NuxtLink>
-    <NuxtLink to="/news">News</NuxtLink>
+    <NuxtLink :to="{ name: 'start' }">Start</NuxtLink>
+    <NuxtLink :to="{ name: 'about' }">About</NuxtLink>
+    <NuxtLink :to="{ name: 'newsList' }">News</NuxtLink>
   </nav>
 </template>
 

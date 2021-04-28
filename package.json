@@ -17,6 +17,7 @@
     "sass-loader": "10"
   },
   "devDependencies": {
+    "@nuxtjs/router": "^1.6.1",
     "@nuxtjs/style-resources": "^1.0.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
