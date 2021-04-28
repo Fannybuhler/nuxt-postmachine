@@ -2,9 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Start from '~/pages/start'
+import Latest from '~/pages/latest'
 import About from '~/pages/about'
-import NewsList from '~/pages/news/list'
-import NewsPost from '~/pages/news/post'
+import News from '~/pages/news'
+import Post from '~/pages/post'
 
 Vue.use(Router)
 
@@ -15,7 +16,15 @@ export function createRouter() {
       {
         path: '/',
         name: 'start',
-        component: Start
+        component: Start,
+        meta: {
+          scope: 'space'
+        }
+      },
+      {
+        path: '/news',
+        name: 'latest',
+        component: Latest,
       },
       {
         path: '/about',
@@ -23,14 +32,14 @@ export function createRouter() {
         component: About
       },
       {
-        path: '/news',
-        name: 'newsList',
-        component: NewsList
+        path: '/news/:scope',
+        name: 'newsListScope',
+        component: News,
       },
       {
         path: '/post/:id',
         name: 'newsPost',
-        component: NewsPost
+        component: Post
       }
     ]
   })

@@ -33,6 +33,12 @@ export default {
 
     this.post = await response.post
   },
+
+  head() {
+    return {
+      title: this.post.title
+    }
+  }
 }
 </script>
 

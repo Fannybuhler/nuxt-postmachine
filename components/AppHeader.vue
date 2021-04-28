@@ -1,8 +1,11 @@
 <template>
   <nav class="navbar">
     <NuxtLink :to="{ name: 'start' }">Start</NuxtLink>
+    <NuxtLink :to="{ name: 'latest' }">Latest</NuxtLink>
     <NuxtLink :to="{ name: 'about' }">About</NuxtLink>
-    <NuxtLink :to="{ name: 'newsList' }">News</NuxtLink>
+    <NuxtLink :to="{ name: 'newsListScope', params: { scope: 'crime' }}">Crime</NuxtLink>
+    <NuxtLink :to="{ name: 'newsListScope', params: { scope: 'fashion' } }">Fashion</NuxtLink>
+    <NuxtLink :to="{ name: 'newsListScope', params: { scope: 'space' } }">Space</NuxtLink>
   </nav>
 </template>
 

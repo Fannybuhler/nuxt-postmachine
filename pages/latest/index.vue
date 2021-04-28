@@ -1,30 +1,13 @@
 <template>
   <main class="news-body">
     <h1 class="page-title">
-      Trending News
+      Latest News
     </h1>
     <p v-if="$fetchState.pending">Fetching posts...</p>
     <p v-else-if="$fetchState.error">An error occurred :(</p>
     <div v-else>
       <ul>
-        <li v-for="post, index of latest" :key="post.id">
-          {{ index+1 }}. {{ post.date }}
-        </li>
-      </ul>
-      <ul>
-        <li v-for="post of spacePosts" :key="post.id">
-          <PostRow :post="post" />
-        </li>
-      </ul>
-      <hr />
-      <ul>
-        <li v-for="post of fashionPosts" :key="post.id">
-          <PostRow :post="post" />
-        </li>
-      </ul>
-      <hr />
-      <ul>
-        <li v-for="post of crimePosts" :key="post.id">
+        <li v-for="post of latest" :key="post.id">
           <PostRow :post="post" />
         </li>
       </ul>
@@ -36,9 +19,6 @@
 export default {
   data() {
     return {
-      spacePosts: [],
-      fashionPosts: [],
-      crimePosts: [],
       latest: null
     }
   },
@@ -54,16 +34,12 @@ export default {
 
     const responseCrime = await fetch(`${endpoint}/crime`)
     .then ((res) => res.json())
-
-    this.spacePosts = responseSpace.posts.trending.slice(0, 3)
-    this.fashionPosts = responseFashion.posts.trending.slice(0, 3)
-    this.crimePosts = responseCrime.posts.trending.slice(0, 3)
     
     const latestPosts = [ ...responseSpace.posts.latest, ...responseFashion.posts.latest, ...responseCrime.posts.latest ]
     
     this.latest = latestPosts.sort((a,b) => {
       return new Date(b.date) - new Date(a.date)
-    }).slice(0,3)
+    }).slice(0,10)
   },
 }
 </script>

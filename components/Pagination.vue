@@ -17,10 +17,6 @@ export default {
       type: Number,
       default: null
     },
-    parentSlug: {
-      type: String,
-      default: '/'
-    }
   },
 
   data() {
@@ -34,12 +30,12 @@ export default {
     prevPage() {
       window.scroll(0, 0)
       this.page--
-      this.$router.push({ path: `${this.$props.parentSlug}?page=${this.page}` })
+      this.$router.push({ path: `${this.$route.path}?page=${this.page}` })
     },
     nextPage() {
       window.scroll(0, 0)
       this.page++
-      this.$router.push({ path: `${this.$props.parentSlug}?page=${this.page}` })
+      this.$router.push({ path: `${this.$route.path}?page=${this.page}` })
     }
   }  
 }
