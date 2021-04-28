@@ -65,20 +65,20 @@ export default {
 
   @media (max-width: $tablet) {
     .post-header {
-    &__heading {
-      font-size: 28px;
-      line-height: 34px;
-    }
-
-    &__heading-prefix {
-      font-size: 28px;
-      line-height: 34px;
-
-      &::after {
+      &__heading {
         font-size: 28px;
         line-height: 34px;
       }
+
+      &__heading-prefix {
+        font-size: 28px;
+        line-height: 34px;
+
+        &::after {
+          font-size: 28px;
+          line-height: 34px;
+        }
+      }
     }
-  }
   }
 </style>
