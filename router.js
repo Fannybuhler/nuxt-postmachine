@@ -28,7 +28,7 @@ export function createRouter() {
         component: NewsList
       },
       {
-        path: '/news/:id',
+        path: '/post/:id',
         name: 'newsPost',
         component: NewsPost
       }
