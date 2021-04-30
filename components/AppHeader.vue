@@ -23,5 +23,9 @@ export default {
     padding: 1rem;
     margin-bottom: 0.5rem;
   } 
+
+  .router-link-exact-active {
+    text-decoration: underline;
+  }
 </style>
 
