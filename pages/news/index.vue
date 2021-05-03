@@ -2,6 +2,7 @@
 <template>
   <main class="news-body">
     <h1 class="page-title">{{ title }}</h1>
+    <p class="page-title__subheading">Are you interested in {{ this.scope }} news? Postmachine got you covered!</p>
     <p v-if="$fetchState.pending">Fetching posts...</p>
     <p v-else-if="$fetchState.error">An error occurred :(</p>
     <div v-else>
@@ -22,7 +23,8 @@ export default {
       posts: [],
       page: null,
       total: null,
-      title: null
+      title: null,
+      scope: this.$route.params.scope
     }
   },
 
@@ -35,7 +37,7 @@ export default {
     const skip = (take * page) - take
     
     const response = await fetch(
-      `${endpoint}/${scope}?take=${take}&skip=${skip}`
+      `${endpoint}/${this.scope}?take=${take}&skip=${skip}`
     ).then((res) => res.json())
 
     this.page = page
@@ -63,10 +65,6 @@ export default {
 </script>
 
 <style>
-  .page-title {
-   margin: 2rem 0; 
-  }
-
   .news-body {
     margin: 0 2rem;
   }

@@ -1,14 +1,16 @@
 <template>
   <NuxtLink
-    class="post-row"
+    class="promoted-post"
     :to="{ name: 'newsPost', params: { id: post.id } }"
   >
-    <div class="post-row__info">
-      <h3 class="post-row__title">{{ post.title }}</h3>
-      <PostMeta :post="post" />
-      <p class="post-row__summary">{{ summary }}</p>
+    <div class="promoted-post__info">
+      <img class="promoted-post__media" :src="post.image" />
+      <div class="promoted-post__content">
+        <h3 class="promoted-post__title">{{ post.title }}</h3>
+        <PostMeta :post="post" />
+        <p class="promoted-post__summary">{{ summary }}</p>
+      </div>
     </div>
-    <img class="post-row__media" :src="post.image" />
   </NuxtLink>
 </template>
 
@@ -23,7 +25,7 @@ export default {
 
   data() {
     return {
-      summary: this.trimSummary(this.$props.post.summary)
+      summary: this.trimSummary(this.$props.post.summary),
     }
   },
 
@@ -39,14 +41,20 @@ export default {
 }
 </script>
 
-<style lang='scss'>
-.post-row {
+<style lang="scss">
+  .promoted-post {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   width: 100%;
   margin-bottom: 2rem;
 
+  &__media {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
   &__info {
     display: flex;
     flex: 1;
@@ -54,7 +62,7 @@ export default {
   }
 
   &__title {
-    font-size: 24px;
+    font-size: 32px;
     line-height: 30px;
     font-weight: 700;
   }

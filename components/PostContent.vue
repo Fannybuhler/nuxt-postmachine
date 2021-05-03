@@ -1,5 +1,5 @@
 <template>
-  <div class="layout__main">
+  <div class="layout">
     <div class="post-media">
       <img class="post-media__image" :src="post.image">
       <div class="post-media__cover" :style="{ 'background-image': `url(${post.image})` }"></div>
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style lang="scss">
-  .layout__main {
+  .layout {
     margin-bottom: 2rem;
   }
 
@@ -103,14 +103,6 @@ export default {
       border-radius: 9999px;
       font-size: 14px;
       text-transform: capitalize;
-    }
-  }
-
-  @media (min-width: $desktop) {
-    .layout__main {
-      float: left;
-      clear: left;
-      width: calc(65% - 4rem);
     }
   }
 

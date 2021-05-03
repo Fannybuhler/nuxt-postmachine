@@ -3,6 +3,11 @@
     <h1 class="page-title">
       Latest News
     </h1>
+    <p class="page-title__subheading">Get daily updates and the latest news from the categories 
+      <NuxtLink class="page-title__subheading__links" :to="{ name: 'newsListScope', params: { scope: 'crime' }}">Crime News, </NuxtLink>
+      <NuxtLink class="page-title__subheading__links" :to="{ name: 'newsListScope', params: { scope: 'fashion' } }">Fashion News, </NuxtLink> and
+      <NuxtLink class="page-title__subheading__links" :to="{ name: 'newsListScope', params: { scope: 'space' } }"> Space News.</NuxtLink>
+    </p>
     <p v-if="$fetchState.pending">Fetching posts...</p>
     <p v-else-if="$fetchState.error">An error occurred :(</p>
     <div v-else>
