@@ -42,11 +42,12 @@ export default {
 </script>
 
 <style>
-    .button-wrapper {
+  .button-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+  
   .pagination-button {
     margin: 1rem 0.5rem;
     padding: 5px;

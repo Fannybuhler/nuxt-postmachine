@@ -12,6 +12,7 @@
     <p v-else-if="$fetchState.error">An error occurred :(</p>
     <div v-else class="layout">
       <div class="layout__main">
+        <h2 class="category-title">Space Articles</h2>
         <ul>
           <li v-for="post, index in spacePosts" :key="post.id">
             <PromotedPost v-if="index === 0" :post="post" />
@@ -19,6 +20,7 @@
           </li>
         </ul>
         <hr />
+        <h2 class="category-title">Fashion Articles</h2>
         <ul>
           <li v-for="post, index in fashionPosts" :key="post.id">
             <PromotedPost v-if="index === 0" :post="post" />
@@ -26,6 +28,7 @@
           </li>
         </ul>
         <hr />
+        <h2 class="category-title">Crime Articles</h2>
         <ul>
           <li v-for="post, index in crimePosts" :key="post.id">
             <PromotedPost v-if="index === 0" :post="post" />
@@ -69,7 +72,7 @@ export default {
     this.crimePosts = responseCrime.posts.trending.slice(0, 3) 
     
     const latestPosts = [...responseSpace.posts.latest, ...responseFashion.posts.latest, ...responseCrime.posts.latest]
-    
+
     this.latest = latestPosts.sort((a,b) => {
       return new Date(b.date) - new Date(a.date)
     }).slice(0, 6)

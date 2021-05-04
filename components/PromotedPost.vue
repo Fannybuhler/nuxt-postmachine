@@ -63,7 +63,7 @@ export default {
 
   &__title {
     font-size: 32px;
-    line-height: 30px;
+    line-height: 110%;
     font-weight: 700;
   }
 }

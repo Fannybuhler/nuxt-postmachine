@@ -53,16 +53,24 @@ hr {
 }
 
 .page-title {
-   margin-top: 2rem;
+  margin-top: 2rem;
 
-   &__subheading {
-     margin: 1rem 0;
+  &__subheading {
+    margin: 1rem 0;
 
-     &__links {
-        font-style: italic;
-      }
+    &__links {
+      font-style: italic;
     }
   }
+}
+.category-title {
+  margin-bottom: 0.3rem;
+  color: $primary-green;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -.2px;
+}
 
 @media (min-width: $desktop) {
   .layout {
